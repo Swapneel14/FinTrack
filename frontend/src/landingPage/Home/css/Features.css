@@ -1,0 +1,9 @@
+.feature-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.feature-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(105, 113, 190, 0.15);
+}
