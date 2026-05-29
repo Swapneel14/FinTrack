@@ -50,3 +50,116 @@ code {
 .nav-link:hover{
     color: #C8A165 !important;
 }
+/* =========================
+   LIGHT MODE (DEFAULT)
+========================= */
+
+body {
+  background: #F8FAFC;
+  color: #0F172A;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* =========================
+   DARK MODE BASE
+========================= */
+
+body.dark-mode {
+  background: #111827;
+  color: #F9FAFB;
+}
+
+/* =========================
+   GLOBAL TEXT FIX
+========================= */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5 {
+  color: #FFFFFF !important;
+}
+
+body.dark-mode span,
+body.dark-mode p {
+  color: inherit;
+}
+
+/* muted / secondary text */
+body.dark-mode .text-muted,
+body.dark-mode .text-secondary,
+body.dark-mode .summary-subtitle,
+body.dark-mode .transactions-subheading,
+body.dark-mode .chart-subheading,
+body.dark-mode .settings-subtitle,
+body.dark-mode .quick-stat-title,
+body.dark-mode .comparison-subtitle {
+  color: #CBD5E1 !important;
+}
+
+/* =========================
+   CARDS / CONTAINERS
+========================= */
+
+body.dark-mode .summary-card,
+body.dark-mode .transactions-table,
+body.dark-mode .settings-card,
+body.dark-mode .topbar,
+body.dark-mode .quick-stat-card,
+body.dark-mode .comparison-card,
+body.dark-mode .transactions-topbar,
+body.dark-mode .insight-card {
+  background: #1F2937;
+  border: 1px solid #374151;
+  color: #F9FAFB;
+}
+
+/* =========================
+   TABLE ROWS
+========================= */
+
+body.dark-mode .transaction-row {
+  border-color: #374151;
+}
+
+body.dark-mode .transaction-row:hover {
+  background: #273549;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+body.dark-mode .sidebar {
+  background: #0B1120;
+  border-right: 1px solid #1F2937;
+}
+
+body.dark-mode .sidebar-link {
+  color: #D1D5DB;
+}
+
+body.dark-mode .sidebar-link:hover {
+  background: #1F2937;
+  color: #FFFFFF;
+}
+
+body.dark-mode .active-link {
+  background: linear-gradient(135deg, #2563EB, #06B6D4);
+  color: white !important;
+}
+
+/* =========================
+   INPUT FIX
+========================= */
+
+body.dark-mode input {
+  background: #111827;
+  color: #F9FAFB;
+  border: 1px solid #374151;
+}
+
+body.dark-mode input::placeholder {
+  color: #6B7280;
+}

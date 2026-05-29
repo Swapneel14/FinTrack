@@ -10,7 +10,7 @@ function Hero(){
         
         <div className="col-4">
           <img
-            src="images/mobile.png"
+            src="images/mobile2.png"
             className="img-fluid"
             alt="mobile"
             style={{
@@ -23,7 +23,7 @@ function Hero(){
 
         <div className="col-8">
            <img
-            src="images/pc.png"
+            src="images/pc2.png"
             className="img-fluid"
             alt="pc"
             style={{

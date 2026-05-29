@@ -1,7 +1,11 @@
-import React from "react";
+import React, {
+  useState,
+  useEffect
+} from "react";
 
 import { Outlet } from "react-router-dom";
-import { Route,Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+
 
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
@@ -10,8 +14,29 @@ import "./css/Dashboard.css";
 import SummaryCards from "./components/SummaryCards";
 import ExpenseChart from "./components/ExpenseChart";
 import Transactions from "./components/Transactions";
+import Settings from "./components/Settings";
+import Analytics from "./components/Analytics";
 
 function Dashboard() {
+  const [darkMode, setDarkMode] =
+    useState(false);
+  useEffect(() => {
+
+    if (darkMode) {
+
+      document.body.classList.add(
+        "dark-mode"
+      );
+
+    } else {
+
+      document.body.classList.remove(
+        "dark-mode"
+      );
+
+    }
+
+  }, [darkMode]);
 
   return (
 
@@ -33,7 +58,7 @@ function Dashboard() {
           </div>
 
           {/* Dynamic Content */}
-             <div className="dashboard-content">
+          <div className="dashboard-content">
 
             <Routes>
 
@@ -51,6 +76,23 @@ function Dashboard() {
               <Route
                 path="expensechart"
                 element={<ExpenseChart />}
+              />
+
+              <Route
+                path="settings"
+                element={
+                  <Settings
+                    darkMode={darkMode}
+                    setDarkMode={setDarkMode}
+                  />
+                }
+              />
+
+              <Route
+                path="analytics"
+                element={
+                 <Analytics/>
+                }
               />
 
             </Routes>

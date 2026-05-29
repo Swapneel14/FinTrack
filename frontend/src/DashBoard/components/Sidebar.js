@@ -1,7 +1,14 @@
 import React from "react";
 import "./../css/Dashboard.css";
-import { useClerk, UserButton, useUser } from "@clerk/react";
-import { Link } from "react-router-dom";
+
+import {
+  useClerk,
+  useUser
+} from "@clerk/react";
+
+import {
+  NavLink
+} from "react-router-dom";
 
 function Sidebar() {
 
@@ -9,12 +16,13 @@ function Sidebar() {
   const { user } = useUser();
 
   return (
+
     <div className="sidebar d-flex flex-column justify-content-between">
 
       {/* Top Section */}
       <div>
 
-        {/* User Profile Section */}
+        {/* User Profile */}
         <div className="user-profile text-center mb-5">
 
           <img
@@ -33,38 +41,93 @@ function Sidebar() {
 
         </div>
 
-        {/* Navigation Links */}
+        {/* Navigation */}
         <div className="d-flex flex-column gap-3">
 
-          <Link to="/dashboard" className="sidebar-link active">
+          <NavLink
+            to="/dashboard"
+            end
+            className={({ isActive }) =>
+              isActive
+              ?
+              "sidebar-link active-link"
+              :
+              "sidebar-link"
+            }
+          >
             Dashboard
-          </Link>
+          </NavLink>
 
-          <Link to="/dashboard/transactions" className="sidebar-link">
+          <NavLink
+            to="/dashboard/transactions"
+            className={({ isActive }) =>
+              isActive
+              ?
+              "sidebar-link active-link"
+              :
+              "sidebar-link"
+            }
+          >
             Transactions
-          </Link>
+          </NavLink>
 
-          <a href="/dashboard/expensechart" className="sidebar-link">
+          <NavLink
+            to="/dashboard/expensechart"
+            className={({ isActive }) =>
+              isActive
+              ?
+              "sidebar-link active-link"
+              :
+              "sidebar-link"
+            }
+          >
             Budgets
-          </a>
+          </NavLink>
 
-          <a href="/dashboard/analytics" className="sidebar-link">
+          <NavLink
+            to="/dashboard/analytics"
+            className={({ isActive }) =>
+              isActive
+              ?
+              "sidebar-link active-link"
+              :
+              "sidebar-link"
+            }
+          >
             Analytics
-          </a>
+          </NavLink>
 
-          <a href="/dashboard/profile" className="sidebar-link">
+          <NavLink
+            to="/dashboard/profile"
+            className={({ isActive }) =>
+              isActive
+              ?
+              "sidebar-link active-link"
+              :
+              "sidebar-link"
+            }
+          >
             Profile
-          </a>
+          </NavLink>
 
-          <a href="/dashboard/settings" className="sidebar-link">
+          <NavLink
+            to="/dashboard/settings"
+            className={({ isActive }) =>
+              isActive
+              ?
+              "sidebar-link active-link"
+              :
+              "sidebar-link"
+            }
+          >
             Settings
-          </a>
+          </NavLink>
 
         </div>
 
       </div>
 
-      {/* Logout Button */}
+      {/* Logout */}
       <div>
 
         <button
@@ -77,6 +140,7 @@ function Sidebar() {
       </div>
 
     </div>
+
   );
 }
 
