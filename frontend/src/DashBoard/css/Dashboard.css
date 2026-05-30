@@ -1310,3 +1310,63 @@
 
     font-weight: 600;
 }
+
+/* Transaction Add Button */
+.add-transaction-btn {
+  border: none;
+  padding: 12px 20px;
+
+  border-radius: 12px;
+
+  background: #2563eb;
+  color: white;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.add-transaction-btn:hover {
+  transform: translateY(-2px);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.transaction-modal {
+  width: 500px;
+  max-width: 90%;
+
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 40px
+    rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+  border: none;
+  background: transparent;
+
+  font-size: 22px;
+  cursor: pointer;
+}

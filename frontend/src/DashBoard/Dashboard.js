@@ -7,6 +7,7 @@ import { Outlet } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 
 
+
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 
@@ -16,8 +17,11 @@ import ExpenseChart from "./components/ExpenseChart";
 import Transactions from "./components/Transactions";
 import Settings from "./components/Settings";
 import Analytics from "./components/Analytics";
+import AddTransactionModal from "./components/AddTransactionModal";
 
 function Dashboard() {
+  const [showModal, setShowModal] =
+    useState(false);
   const [darkMode, setDarkMode] =
     useState(false);
   useEffect(() => {
@@ -65,7 +69,11 @@ function Dashboard() {
               {/* Default */}
               <Route
                 index
-                element={<SummaryCards />}
+                element={
+                  <SummaryCards
+                    setShowModal={setShowModal}
+                  />
+                }
               />
 
               <Route
@@ -91,11 +99,17 @@ function Dashboard() {
               <Route
                 path="analytics"
                 element={
-                 <Analytics/>
+                  <Analytics />
                 }
               />
 
             </Routes>
+            <AddTransactionModal
+              show={showModal}
+              onClose={() =>
+                setShowModal(false)
+              }
+            />
 
           </div>
 
